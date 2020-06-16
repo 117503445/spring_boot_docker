@@ -48,6 +48,7 @@
     </dependencies>
 
     <build>
+        <finalName>spring_boot_docker</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

@@ -18,11 +18,18 @@ public class MainController {
     @Value("${app.build.time}")
     private String buildTime;
 
+
+    @Value("${env.var1}")
+    private String envVar1;
+    @Value("${env.var2}")
+    private String envVar2;
+
     @GetMapping
     public String Hello() {
         System.out.println(version);
         System.out.println(buildTime);
-        return String.format("This is Spring Boot Docker Test :D {%s} {%s}", version, buildTime);
+
+        return String.format("This is Spring Boot Docker Test :D {%s} {%s} {%s} {%s}", version, buildTime, envVar1, envVar2);
 
     }
 }

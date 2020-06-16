@@ -5,5 +5,6 @@ WORKDIR /build/
 RUN mvn package -Dmaven.test.skip=true
 FROM openjdk:14-alpine
 WORKDIR /app
-COPY --from=MAVEN_BUILD /build/target/spring_boot_docker-0.0.1-SNAPSHOT.jar /app/
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar", "spring_boot_docker-0.0.1-SNAPSHOT.jar"]
+COPY --from=MAVEN_BUILD /build/target/spring_boot_docker.jar /app/
+ENV var1="" var2=""
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar", "spring_boot_docker.jar","--env.var1=${var1}","--env.var2=${var2}"]
