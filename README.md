@@ -4,7 +4,7 @@ Spring boot 的 Docker 化实践
 
 ## 项目地址
 
-
+<https://github.com/117503445/spring_boot_docker>
 
 ## 目标
 
@@ -30,7 +30,7 @@ docker rmi 117503445/spring_boot_docker
 docker run --name spring_boot_docker -d -e var1="var 1" -e var2="var 2" -p 80:80 --restart=always 117503445/spring_boot_docker:latest
 ```
 
-再配置 WatchTower 以启用自动更新
+再配置 WatchTower 以启用自动更新 (以下代码会自动更新所有 docker image)
 
 ```sh
 docker run -d \
